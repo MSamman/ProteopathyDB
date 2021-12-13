@@ -1,5 +1,11 @@
 import Config
 
+# Configure your database
+config :proteopathy_db, ProteopathyDb.Repo,
+  database: Path.expand("../proteopathy_db_dev.db", Path.dirname(__ENV__.file)),
+  pool_size: 5,
+  show_sensitive_data_on_connection_error: true
+
 # For production, don't forget to configure the url host
 # to something meaningful, Phoenix uses this information
 # when generating URLs.
