@@ -1,0 +1,26 @@
+<section >
+    <table class="border-collapse table-auto w-full text-md">
+      <thead>
+        <th class="border-b font-medium p-4 pl-8 pt-0 pb-3 text-gray-400 text-left">Protein Name</th>
+        <th class="border-b font-medium p-4 pt-0 pb-3 text-gray-400 text-left">Gene Name</th>
+        <th class="border-b font-medium p-4 pr-8 pt-0 pb-3 text-gray-400 text-left">UniProt ID</th>
+      </thead>
+      <%= for protein <- @proteins do %>
+        <tr>
+          <td class="border-b border-gray-100 p-4 pl-8 text-gray-500 text-xl">
+            <a class="text-blue-400 hover:text-blue-600"  target="_blank" href={"/protein/#{protein.uniprot_id}"}>
+              <%= protein.protien_name %>
+            </a>
+          </td>
+          <td class="border-b border-gray-100 p-4 text-gray-500">
+            <%= protein.gene_name %>
+          </td>
+          <td class="border-b border-gray-100 p-4 pr-8 text-gray-500">
+            <a class="text-blue-400 hover:text-blue-600" target="_blank" href={"https://www.uniprot.org/uniprot/#{protein.uniprot_id}"}>
+              <%= protein.uniprot_id %>
+            </a>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+</section>
