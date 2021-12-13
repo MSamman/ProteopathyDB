@@ -7,12 +7,7 @@ import Config
 # any compile-time configuration in here, as it won't be applied.
 # The block below contains prod specific runtime configuration.
 if config_env() == :prod do
-  database_path =
-    System.get_env("DATABASE_PATH") ||
-      raise """
-      environment variable DATABASE_PATH is missing.
-      For example: /etc/proteopathy_db/proteopathy_db.db
-      """
+  database_path = "ecto://5be0f30f-cec9-401b-84bd-a50fb0121c81-user:pw-cd37502d-a5b7-4dd2-aa72-1f7c062c742a@postgres-free-tier-v2020.gigalixir.com:5432/5be0f30f-cec9-401b-84bd-a50fb0121c81"
 
   config :proteopathy_db, ProteopathyDb.Repo,
     database: database_path,

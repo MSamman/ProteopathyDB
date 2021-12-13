@@ -2,7 +2,7 @@ import Config
 
 config :proteopathy_db, ProteopathyDb.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: {:system, "DATABASE_URL"},
+  url: "ecto://5be0f30f-cec9-401b-84bd-a50fb0121c81-user:pw-cd37502d-a5b7-4dd2-aa72-1f7c062c742a@postgres-free-tier-v2020.gigalixir.com:5432/5be0f30f-cec9-401b-84bd-a50fb0121c81",
   database: "",
   ssl: true,
   pool_size: 2
