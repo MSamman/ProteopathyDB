@@ -1,7 +1,6 @@
 <section x-data="{selectedMutation: undefined}">
   <h1 class="text-2xl mb-10"><%= @protein.protien_name %> sequence</h1>
   <h2 class="break-words mb-20">
-
     <%= for {char, idx} <- Enum.with_index(String.codepoints(@protein.sequence)) do %>
       <button 
         @click={"selectedMutation = #{idx} + 1;"} 
